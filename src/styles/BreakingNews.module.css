@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: #b91c1c;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.label {
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: 16px;
+}
+
+/* NEW: marquee wrapper */
+.marqueeWrapper {
+  position: relative;
+  overflow: hidden;
+  flex: 1; /* takes remaining space */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
