@@ -6,7 +6,6 @@ import MediaCard from "@/components/MediaCard";
 import PublicVoiceCTA from "@/components/PublicVoiceCTA";
 
 
-
 export default function HomePage() {
   return (
     <main className="py-8">
