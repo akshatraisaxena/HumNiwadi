@@ -1,0 +1,43 @@
+.section {
+  margin: 3rem;
+}
+
+/* 🎬 Mobile: Film-strip style */
+.mediaGrid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+/* Hide scrollbar */
+.mediaGrid::-webkit-scrollbar {
+  display: none;
+}
+.mediaGrid {
+  scrollbar-width: none;
+}
+
+.mediaItem {
+  min-width: 75%;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .mediaGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+  }
+
+  .mediaItem {
+    min-width: unset;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .mediaGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

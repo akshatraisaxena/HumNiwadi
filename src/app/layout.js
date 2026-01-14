@@ -1,18 +1,14 @@
-import BreakingNews from "@/components/BreakingNews";
+import BreakingNews from "@/components/BreakingNews/BreakingNews";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FeaturedStory from "@/components/FeaturedStory";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-neutral-50 text-neutral-900">
+      <body>
         <Navbar />
         <BreakingNews />
-        {/* <HeroSection /> */}
-        {/* <FeaturedStory/> */}
         {children}
         <Footer />
       </body>

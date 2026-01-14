@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "../styles/HeroSection.module.css";
+import styles from "./HeroSection.module.css";
 
 const slides = ["/Neem.jpg", "/Neem2.jpg", "/Neem3.jpg"];
 

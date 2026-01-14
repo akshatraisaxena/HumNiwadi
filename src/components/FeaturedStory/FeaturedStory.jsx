@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/FeaturedStory.module.css";
+import styles from "./FeaturedStory.module.css";
 
 export default function FeaturedStory() {
   return (
@@ -34,7 +34,7 @@ export default function FeaturedStory() {
             into a community library featuring books in Bundeli and Hindi.
           </p>
 
-          <Link href="/news/today-in-niwadi" className={styles.readMore}>
+          <Link href="/news" className={styles.readMore}>
             Read Full Story →
           </Link>
         </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import styles from "../styles/Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 const navLinks = [
   { name: "Home", href: "/" },

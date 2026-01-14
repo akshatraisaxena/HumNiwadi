@@ -1,4 +1,4 @@
-import styles from "../styles/BreakingNews.module.css";
+import styles from "./BreakingNews.module.css";
 
 export default function BreakingNews() {
   return (

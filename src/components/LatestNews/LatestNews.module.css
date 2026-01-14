@@ -1,0 +1,46 @@
+.latestNews {
+  margin-top: 4rem;
+}
+
+/* 🔹 Mobile: Horizontal scroll (carousel) */
+.newsGrid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+/* Hide scrollbar (optional but recommended) */
+.newsGrid::-webkit-scrollbar {
+  display: none;
+}
+.newsGrid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.newsItem {
+  min-width: 85%;
+  scroll-snap-align: start;
+}
+
+/* 🔹 Tablet */
+@media (min-width: 640px) {
+  .newsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+  }
+
+  .newsItem {
+    min-width: unset;
+  }
+}
+
+/* 🔹 Desktop */
+@media (min-width: 1024px) {
+  .newsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
