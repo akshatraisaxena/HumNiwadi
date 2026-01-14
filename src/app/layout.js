@@ -11,8 +11,8 @@ export default function RootLayout({ children }) {
       <body className="bg-neutral-50 text-neutral-900">
         <Navbar />
         <BreakingNews />
-        <HeroSection />
-        <FeaturedStory/>
+        {/* <HeroSection /> */}
+        {/* <FeaturedStory/> */}
         {children}
         <Footer />
       </body>

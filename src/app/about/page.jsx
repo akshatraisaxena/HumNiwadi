@@ -1,10 +1,10 @@
 export default function AboutPage() {
   return (
-    <main className="bg-[#f7f4ed] text-neutral-800">
+    <main className="bg-white text-neutral-800">
       
       {/* Hero Section */}
-      <section className="py-28 text-center px-4 bg-[#e6e2d9]">
-        <h1 className="text-4xl font-semibold text-green-600 mb-4">
+      <section className="py-28 text-center px-4 bg-[rgb(244_241_235)]">
+        <h1 className="text-4xl font-semibold text-[rgb(82_133_71)] mb-4">
           About Hum Niwadi
         </h1>
         <p className="max-w-2xl mx-auto text-lg text-neutral-700">
@@ -14,12 +14,12 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="max-w-4xl mx-auto px-4 py-20">
-        <h2 className="text-2xl font-semibold mb-6">
-          Who We Are
-        </h2>
+      <section className="mx-auto px-4 py-20 bg-white max-w-4xl">
+          <h2 className="text-2xl font-semibold mb-6">
+             Who We Are
+          </h2>
 
-        <div className="space-y-5 text-neutral-700 leading-relaxed">
+          <div className="space-y-5 text-neutral-700 leading-relaxed">
           <p>
             Hum Niwadi is a dedicated digital news platform committed to serving
             the residents of Niwadi and surrounding regions. We believe that every
@@ -41,11 +41,11 @@ export default function AboutPage() {
             strive to be the first source our readers turn to when they want to
             understand what’s happening in Niwadi and why it matters.
           </p>
-        </div>
+          </div>
       </section>
 
       {/* Vision & Mission */}
-      <section className="bg-[#f2efe7] py-20 px-4">
+      <section className="bg-[rgb(244_241_235)] py-20 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
 
           {/* Vision */}
