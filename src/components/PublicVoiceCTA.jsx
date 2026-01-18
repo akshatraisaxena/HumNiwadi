@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PublicVoiceCTA() {
   return (
-    <section className="bg-green-50 border-t border-b border-green-200 py-12">
+    <section className="bg-green-50 border-t border-b border-green-200 py-12 mb-20">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-2xl font-semibold mb-4">
           Have a Story to Share?

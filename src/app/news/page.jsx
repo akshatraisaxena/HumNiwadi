@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MainNewsCard from "@/components/MainNewsCard";
 import PublicVoiceCTA from "@/components/PublicVoiceCTA";
 
@@ -24,9 +24,12 @@ const ALL_CATEGORIES = [
 
 export default function NewsPage() {
   const [search, setSearch] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const filteredCategories = ALL_CATEGORIES.filter(category =>
     category.toLowerCase().includes(search.toLowerCase())
+    
   );
 
   const newsData = [
@@ -103,8 +106,24 @@ export default function NewsPage() {
 
 ];
 
-  return (
-    <main className="bg-white py-16">
+const filteredNews = newsData.filter((item) => {
+  const matchesCategory =
+    activeCategory === "All" ||
+    item.category.toLowerCase() === activeCategory.toLowerCase();
+
+  const matchesSearch =
+    item.title.toLowerCase().includes(search.toLowerCase()) ||
+    item.description.toLowerCase().includes(search.toLowerCase());
+
+  return matchesCategory && matchesSearch;
+});
+useEffect(() => {
+  setVisibleCount(6);
+}, [search, activeCategory]);
+
+
+return (
+    <main className="bg-white ">
       <div className="max-w-12xl mx-auto ">
 
         {/* Header */}
@@ -133,39 +152,46 @@ export default function NewsPage() {
 
         {/* Category Filters */}
         <div className="flex flex-wrap gap-3 mb-12 max-w-6xl mx-auto">
-          {filteredCategories.length > 0 ? (
-            filteredCategories.map(category => (
-              <button
-                key={category}
-                className="px-4 py-2 rounded-full border border-[#d6cfc4]
-                text-sm text-[#3b3b3b]
-                hover:bg-[#528547] hover:text-white
-                transition-colors duration-200"
-              >
-                {category}
-              </button>
-            ))
-          ) : (
-            <p className="text-sm text-neutral-500">
-              No categories found.
-            </p>
-          )}
+          {filteredCategories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 rounded-full border transition-all duration-200
+                ${
+                  activeCategory === category
+                    ? "bg-green-700 text-white border-green-700"
+                    : "bg-white text-gray-700 border-gray-300 hover:bg-green-100 hover:text-green-700"
+                }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
        {/* News List */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {newsData.map((item, index) => (
-          <MainNewsCard
-            key={index}
-            image={item.image}
-            category={item.category}
-            date={item.date}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
-         </div>
-         <PublicVoiceCTA />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20">
+          {filteredNews.length === 0 ? (
+            <p className="text-center col-span-full text-gray-500">
+              No news found for this category.
+            </p>
+          ) : (
+            filteredNews.slice(0, visibleCount).map((item, index) => (
+              <MainNewsCard key={index} {...item} />
+            ))  
+          )}
+        </div>
+
+        {visibleCount < filteredNews.length && (
+        <div className="text-center mt-10 mb-10">
+        <button
+         onClick={() => setVisibleCount((prev) => prev + 6)}
+          className="px-8 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition"
+        >
+          Load More News
+         </button>
+        </div>
+       )}
+      <PublicVoiceCTA />
     </div>
     </main>
   );
