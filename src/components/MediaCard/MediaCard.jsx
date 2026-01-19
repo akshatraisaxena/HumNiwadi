@@ -1,7 +1,7 @@
 import styles from "./MediaCard.module.css";
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
-import MediaCard from "@/components/MediaCard";
+import MediaCard from "@/components/Media/MediaCard";
 
 const MediaGallery = () => {
   return (

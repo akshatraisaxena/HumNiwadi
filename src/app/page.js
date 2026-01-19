@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
-import NewsCard from "@/components/NewsCard";
+import NewsCard from "@/components/News/NewsCard";
 import PeopleCard from "@/components/PeopleCard";
 import MediaGallery from "@/components/MediaCard/MediaCard";
 import PublicVoiceCTA from "@/components/PublicVoiceCTA";

@@ -1,7 +1,7 @@
 import styles from "./LatestNews.module.css";
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
-import NewsCard from "@/components/NewsCard";
+import NewsCard from "@/components/News/NewsCard";
 
 const LatestNews = () => {
   return (

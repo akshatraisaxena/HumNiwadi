@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import MainNewsCard from "@/components/MainNewsCard";
+import MainNewsCard from "@/components/News/MainNewsCard";
 import PublicVoiceCTA from "@/components/PublicVoiceCTA";
 
 const ALL_CATEGORIES = [
